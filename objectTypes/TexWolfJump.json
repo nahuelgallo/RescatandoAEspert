@@ -1,0 +1,70 @@
+{
+	"name": "TexWolfJump",
+	"plugin-id": "Sprite",
+	"sid": 863583726547405,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 574691,
+						"collisionPoly": {
+							"points": [
+								0.65625,
+								0.203125,
+								0.8125,
+								0.203125,
+								0.875,
+								0.234375,
+								0.9375,
+								0.703125,
+								0.71875,
+								0.96875,
+								0.65625,
+								1,
+								0.5625,
+								1,
+								0.5,
+								0.96875,
+								0.25,
+								0.765625,
+								0.125,
+								0.609375,
+								0.0625,
+								0.46875,
+								0.25,
+								0.296875,
+								0.34375,
+								0.25
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 891873984691591,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

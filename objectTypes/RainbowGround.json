@@ -1,0 +1,23 @@
+{
+	"name": "RainbowGround",
+	"plugin-id": "TiledBg",
+	"sid": 316667243393067,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1440,
+		"height": 128,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 5208101,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

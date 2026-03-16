@@ -1,0 +1,981 @@
+{
+	"name": "_IntroScene",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "IntroStory",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 709557859767617
+		},
+		{
+			"eventType": "variable",
+			"name": "Comic",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 669128818608793
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 315937008030702
+				}
+			],
+			"actions": [],
+			"sid": 572286281061392
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 287982269440329
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "ParticlesCollected",
+					"sid": 377161240788683
+				}
+			],
+			"sid": 573424828147015
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap",
+					"objectClass": "Touch",
+					"sid": 280642641552204
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 200032986377383,
+					"parameters": {
+						"audio-file": {
+							"path": "CoinA"
+						},
+						"loop": "not-looping",
+						"volume": "8",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 935610681671853,
+					"parameters": {
+						"object-to-create": "ParticlesCollected",
+						"layer": "5",
+						"x": "Touch.X",
+						"y": "Touch.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 620266965379406,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 254121436119774,
+							"parameters": {
+								"variable": "Comic",
+								"comparison": 2,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 658321518445657,
+							"parameters": {
+								"variable": "IntroStory"
+							}
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Transitions",
+							"sid": 681932810497176,
+							"behaviorType": "Tween",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 170679651654408,
+							"parameters": {
+								"variable": "Comic",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 110637570838522,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 939666995655476,
+									"parameters": {
+										"variable": "Comic",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Transitions",
+									"sid": 473456479380872,
+									"parameters": {
+										"instance-variable": "Numero",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Transitions",
+									"sid": 611061366986885,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Comic3\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "2.5",
+										"ease": "easeinoutback",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 802279713721701,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 424950860265431,
+									"parameters": {
+										"variable": "Comic",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Transitions",
+									"sid": 500448998076491,
+									"parameters": {
+										"instance-variable": "Numero",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Transitions",
+									"sid": 841056157595984,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Comic2\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "2.5",
+										"ease": "easeinoutback",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 632681319830257,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Transitions",
+									"sid": 192113958228009,
+									"parameters": {
+										"instance-variable": "Numero",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 353677574699372,
+									"parameters": {
+										"variable": "Comic",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Transitions",
+									"sid": 880904082908954,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Comic1\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "2.5",
+										"ease": "easeinoutback",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 783808460788946,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 668231361969453
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 632107664641546,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Transitions",
+											"sid": 606255185752045,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Comic0\"",
+												"property": "offsetOpacity",
+												"end-value": "0",
+												"time": "2.5",
+												"ease": "easeinoutback",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 279658818120679,
+											"parameters": {
+												"variable": "Comic",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 875130795716595,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 188847792801868,
+									"parameters": {
+										"variable": "Comic",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 329836072970098,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 835113995743298
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 876803230191023,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Transitions",
+											"sid": 248834777748128,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Comic0\"",
+												"property": "offsetOpacity",
+												"end-value": "0",
+												"time": "2.5",
+												"ease": "easeinoutback",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 791139042900819,
+											"parameters": {
+												"variable": "Comic",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 583718853324767,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 581906243935728,
+							"parameters": {
+								"variable": "IntroStory"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 979535323735746,
+							"disabled": true,
+							"parameters": {
+								"audio-file": {
+									"path": "CoinA"
+								},
+								"loop": "not-looping",
+								"volume": "8",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 936970659998088,
+							"parameters": {
+								"variable": "IntroStory",
+								"value": "true"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextIntro",
+							"sid": 411134031057422,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"IntroTxt\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "2.5",
+								"ease": "easeinoutback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 607270287087328,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Mouse2",
+									"sid": 683211322925797,
+									"parameters": {
+										"tags": "\"1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Mouse2",
+									"sid": 122690541008117,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Opacity\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "0.5",
+										"ease": "easeinoutback",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 174747025070769
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 124034059196635,
+					"parameters": {
+						"variable": "IntroStory"
+					}
+				},
+				{
+					"id": "is-any-playing",
+					"objectClass": "Transitions",
+					"sid": 722818988366027,
+					"behaviorType": "Tween",
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Transitions",
+					"sid": 936100154488017,
+					"parameters": {
+						"instance-variable": "Numero",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 359805890948984,
+					"parameters": {
+						"variable": "Comic",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 228981268791164,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 823983138676005
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 253088158256858,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Transitions",
+							"sid": 486112153799495,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Comic3\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "2.5",
+								"ease": "easeinoutback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 869222586499576
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 888200048422797,
+					"parameters": {
+						"variable": "IntroStory"
+					}
+				},
+				{
+					"id": "is-any-playing",
+					"objectClass": "Transitions",
+					"sid": 546905156206697,
+					"behaviorType": "Tween",
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Transitions",
+					"sid": 527989765726712,
+					"parameters": {
+						"instance-variable": "Numero",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 687849834578587,
+					"parameters": {
+						"variable": "Comic",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 306894855027596,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 797820218430447
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 881910373916520,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Transitions",
+							"sid": 129389801866699,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Comic2\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "2.5",
+								"ease": "easeinoutback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 227338685015094,
+							"parameters": {
+								"seconds": "1.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 523846586256006,
+							"parameters": {
+								"variable": "Comic",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 225216605312225
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 700809288064503,
+					"parameters": {
+						"variable": "IntroStory"
+					}
+				},
+				{
+					"id": "is-any-playing",
+					"objectClass": "Transitions",
+					"sid": 779041471337265,
+					"behaviorType": "Tween",
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Transitions",
+					"sid": 613458532068176,
+					"parameters": {
+						"instance-variable": "Numero",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 703329076016609,
+					"parameters": {
+						"variable": "Comic",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 411465636157814,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 345465553121803
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 601303724813775,
+							"parameters": {
+								"seconds": "1.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Transitions",
+							"sid": 455062315958629,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Comic1\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "2.5",
+								"ease": "easeinoutback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 870947731943937
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 723766757789394,
+					"parameters": {
+						"variable": "IntroStory"
+					}
+				},
+				{
+					"id": "is-any-playing",
+					"objectClass": "Transitions",
+					"sid": 805608157419543,
+					"behaviorType": "Tween",
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Transitions",
+					"sid": 104747046905239,
+					"parameters": {
+						"instance-variable": "Numero",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 943770458838760,
+					"parameters": {
+						"variable": "Comic",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 487550044625728,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 713618139909014
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 549288696668367,
+							"parameters": {
+								"seconds": "1.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Transitions",
+							"sid": 928680585478996,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Comic0\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "2.5",
+								"ease": "easeinoutback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 951385032872535
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 137471043475167,
+					"parameters": {
+						"object": "Burbuja"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 149810094409348,
+					"parameters": {
+						"variable": "Comic",
+						"comparison": 5,
+						"value": "3"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 697419589779552,
+					"parameters": {
+						"variable": "IntroStory"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Burbuja",
+					"sid": 812876959703200,
+					"parameters": {
+						"animation": "\"Button\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 787841105142345
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 192295415972355,
+					"parameters": {
+						"audio-file": {
+							"path": "CoinA"
+						},
+						"loop": "not-looping",
+						"volume": "8",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Burbuja",
+					"sid": 619527594615917,
+					"parameters": {
+						"animation": "\"ButtonPressed\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 179723743984635,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 567084540511586,
+					"parameters": {
+						"audio-file": {
+							"path": "MotorRunEngineC"
+						},
+						"loop": "looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 306653590101408,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 440017795040777
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 374707579990018,
+					"parameters": {
+						"audio-file": {
+							"path": "JumpB"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 898951634238488,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 558866813290284,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 199576478439919
+		}
+	],
+	"sid": 182268869244896
+}

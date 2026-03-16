@@ -1,0 +1,34 @@
+{
+	"name": "TextIntro",
+	"plugin-id": "Spritefont2",
+	"sid": 566848921162110,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 584408500269155
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 935167011971781
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 3350810,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

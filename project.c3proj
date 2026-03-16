@@ -1,0 +1,585 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 47600,
+	"name": "RescatandoAEspert",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D camera",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D shape",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "fogexponential",
+			"name": "Fog (exponential)",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "hcj77djbigi",
+	"objectTypes": {
+		"items": [
+			"RainbowGround",
+			"3DCamera",
+			"PlayerCollision",
+			"PlayerBillboard",
+			"TreeBillboard",
+			"TexTree1",
+			"TexTree2",
+			"Timer",
+			"Browser",
+			"Touch",
+			"TexWolf",
+			"TexBird",
+			"TexLizard",
+			"Rock",
+			"Rock2",
+			"Rock3",
+			"Rock4",
+			"RockJumpArea",
+			"Vines",
+			"PortalLizard",
+			"PortalWolf",
+			"PortalBird",
+			"SmokeBillboard",
+			"TexSmoke",
+			"Wood",
+			"WoodSupport",
+			"RockBig",
+			"TexWolfJump",
+			"CoinBillboard",
+			"TexCoin",
+			"Fader",
+			"Rock5",
+			"Rock6",
+			"Particles",
+			"ParticlesCollected",
+			"PressToTXT",
+			"GroundCity",
+			"TimerGraph",
+			"TimerGraphBG",
+			"Audio",
+			"LooseComic",
+			"Portada",
+			"PortadaFondo",
+			"Moto",
+			"Orcos",
+			"FondoSinNubes",
+			"Brocoli",
+			"Piedra",
+			"Lechuga",
+			"Nubes",
+			"GameOverScreen",
+			"Comic",
+			"Comic2",
+			"Comic3",
+			"Burbuja",
+			"Transitions",
+			"ParticleStarTex",
+			"Partice3Dtext",
+			"Mouse",
+			"Mouse2",
+			"Bolsita",
+			"BarBack",
+			"MinimotoUI",
+			"Minimilei",
+			"Rainbowbar",
+			"GoalBar",
+			"HealthUI",
+			"FadeWhite",
+			"HealthUIBG",
+			"PlayerCollisionShadow"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"TextGameOver",
+							"TextSalud",
+							"TextBolsita",
+							"TextTutorial",
+							"TextTimer",
+							"Title",
+							"TextIntro"
+						],
+						"subfolders": [],
+						"name": "Textos"
+					}
+				],
+				"name": "UI"
+			}
+		]
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"MainMenu",
+			"IntroScene",
+			"Game",
+			"RainbowTest",
+			"ObjectRepository"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"_Game",
+			"_MainMenu",
+			"_IntroScene",
+			"_RainbowTest"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "CoinB.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 327738946443051,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "CrashA.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 843066462399065,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "JumpA.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 358068148839791,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "CoinA.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 278571289637649,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hd-classic-oof-minecraft-damage-sound-effect-128-ytshorts.savetube.me.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 549006883243674,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "espert-gritando-en-la-calle-128-ytshorts.savetube.me.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 394020818357043,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "CrashB.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 796029511199084,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "JumpB.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 449292544369930,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MotorStartEngine.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 241990345766488,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MotorRunEngineA.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 831574830875003,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MotorRunEngineB.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 340568080294368,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MotorRunEngineC.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 229547508706241,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MotorRunEngineD.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 916191440729027,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "TouchMove.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 336967596173771,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "you-suck-at-this-game-128-ytshorts.savetube.me.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 261354481593895,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "La Renga Caminito en 8 Bit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 306657876126678,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Luna de Miel en la Mano en 8 bits - Virus.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 470467546440599,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Marcha Peronista - Instrumental Chiptune 8 bit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 156624831413764,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MeNeM lo hizo jingle chiptune 8bit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 583836010171209,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "(Cover 8-Bit) Gustavo Cerati - Puente (NES 2A03).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 401715464157212,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "09_Pronta_entrega.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 551665910011581,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Mario Kart 64 - Rainbow Road.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 585627379892755,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Uctumi - Lamento Boliviano (Commodore 64 cover).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 689364136357357,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 470334475683359,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 457120090134278,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 354867961998111,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 634512399202222,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 806374885345256,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 415541604922629,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 363569169157881,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "Hagovideojuegs",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 1.0471975511965976,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "portrait",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 180,
+	"viewportHeight": 320,
+	"firstLayout": "MainMenu"
+}

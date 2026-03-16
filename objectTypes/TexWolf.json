@@ -1,0 +1,72 @@
+{
+	"name": "TexWolf",
+	"plugin-id": "Sprite",
+	"sid": 667824236943207,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7862719,
+						"collisionPoly": {
+							"points": [
+								0.40625,
+								0.171875,
+								0.59375,
+								0.171875,
+								0.65625,
+								0.203125,
+								0.6875,
+								0.234375,
+								0.8125,
+								0.453125,
+								0.8125,
+								0.671875,
+								0.78125,
+								0.75,
+								0.53125,
+								1,
+								0.4375,
+								0.984375,
+								0.21875,
+								0.765625,
+								0.1875,
+								0.65625,
+								0.1875,
+								0.453125,
+								0.3125,
+								0.234375,
+								0.34375,
+								0.203125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 757684569957110,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 15
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "HealthUIBG",
+	"plugin-id": "TiledBg",
+	"sid": 224493872222040,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 853330646329022
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 8660577,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

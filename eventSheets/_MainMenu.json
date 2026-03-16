@@ -1,0 +1,418 @@
+{
+	"name": "_MainMenu",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Action",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 891270775988690
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 484442084757362
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 419708548259229,
+					"parameters": {
+						"audio-file": {
+							"path": "Uctumi - Lamento Boliviano (Commodore 64 cover)"
+						},
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 440571145413526,
+					"disabled": true,
+					"parameters": {
+						"audio-file": {
+							"path": "Marcha Peronista - Instrumental Chiptune 8 bit"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 133676406762923
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 551472302683757
+				}
+			],
+			"actions": [
+				{
+					"id": "set-height",
+					"objectClass": "GoalBar",
+					"sid": 533770100147323,
+					"parameters": {
+						"height": "GoalBar.ImageHeight*-GoalBar.Size"
+					}
+				}
+			],
+			"sid": 719988259166571
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap",
+					"objectClass": "Touch",
+					"sid": 888141869859219
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 698144541925031,
+					"parameters": {
+						"audio-file": {
+							"path": "CoinA"
+						},
+						"loop": "not-looping",
+						"volume": "8",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 493871386019962,
+					"parameters": {
+						"object-to-create": "ParticlesCollected",
+						"layer": "5",
+						"x": "Touch.X",
+						"y": "Touch.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 644289495468862
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 633489960545516,
+					"parameters": {
+						"object": "Burbuja"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Burbuja",
+					"sid": 723765980847198,
+					"parameters": {
+						"animation": "\"Button\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 626969360726467,
+					"parameters": {
+						"variable": "Action",
+						"comparison": 0,
+						"value": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 498311275169080,
+					"parameters": {
+						"variable": "Action",
+						"value": "\"Start\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Burbuja",
+					"sid": 443227384656156,
+					"parameters": {
+						"animation": "\"ButtonPressed\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 867395453416659,
+					"parameters": {
+						"object-to-create": "ParticlesCollected",
+						"layer": "0",
+						"x": "Touch.X",
+						"y": "Touch.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 456763567032167,
+					"disabled": true
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 995869320264198,
+					"parameters": {
+						"audio-file": {
+							"path": "CoinA"
+						},
+						"loop": "not-looping",
+						"volume": "8",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 656084771927416,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 936979155842614,
+					"disabled": true,
+					"parameters": {
+						"audio-file": {
+							"path": "MotorRunEngineC"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 741603104155278
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 521156698630687,
+					"parameters": {
+						"variable": "Action",
+						"comparison": 0,
+						"value": "\"Start\""
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 160357417730259,
+					"parameters": {
+						"interval-seconds": "0.2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "GoalBar",
+					"sid": 369384257487777,
+					"parameters": {
+						"instance-variable": "Size",
+						"value": "0.02"
+					}
+				}
+			],
+			"sid": 908294692818940
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 722444772641644,
+					"parameters": {
+						"variable": "Action",
+						"comparison": 0,
+						"value": "\"Start\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "Transitions",
+					"sid": 809216003801722,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Opacity\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "BarBack",
+					"sid": 809127943593282,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Opacity\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "TextTutorial",
+					"sid": 108689323645571,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Opacity\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 149208858504311,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 535129277001748,
+							"parameters": {
+								"seconds": "6",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "BarBack",
+							"sid": 891620974554770,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Opacity\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextTutorial",
+							"sid": 316690450086183,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Opacity\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "GoalBar",
+							"sid": 144020429986844,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Opacity\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 223607248778261,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 581892591430169,
+							"parameters": {
+								"layout": "IntroScene"
+							}
+						}
+					],
+					"sid": 288045406737120
+				}
+			]
+		}
+	],
+	"sid": 487012069061862
+}

@@ -1,0 +1,10 @@
+{
+	"name": "PressToTXT",
+	"plugin-id": "Text",
+	"sid": 244273904162938,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

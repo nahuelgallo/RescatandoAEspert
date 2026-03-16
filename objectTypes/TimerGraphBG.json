@@ -1,0 +1,23 @@
+{
+	"name": "TimerGraphBG",
+	"plugin-id": "TiledBg",
+	"sid": 647869409360131,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 10,
+		"height": 100,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9623630,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

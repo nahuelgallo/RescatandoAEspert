@@ -1,0 +1,107 @@
+{
+	"name": "Minimilei",
+	"plugin-id": "Sprite",
+	"sid": 217738444429841,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 974874154911083
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 568645479558060
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 681071675168425
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 23,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5181290,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 774056897944598,
+				"name": "Milei",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 24,
+						"height": 28,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7505974,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.03571428571428571,
+								0.5,
+								0.03571428571428571,
+								0.8333333333333334,
+								0.17857142857142858,
+								1,
+								0.2857142857142857,
+								1,
+								0.42857142857142855,
+								0.875,
+								0.8214285714285714,
+								0.7916666666666666,
+								1,
+								0.08333333333333333,
+								1,
+								0,
+								0.7142857142857143,
+								0,
+								0.32142857142857145,
+								0.041666666666666664,
+								0.10714285714285714
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 664319856741467,
+				"name": "Koopei",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

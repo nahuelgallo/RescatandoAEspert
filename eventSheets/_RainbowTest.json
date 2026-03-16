@@ -1,0 +1,207 @@
+{
+	"name": "_RainbowTest",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "_Game"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 548326738882540
+				}
+			],
+			"actions": [
+				{
+					"id": "set-image-offset-y",
+					"objectClass": "RainbowGround",
+					"sid": 692823160645479,
+					"parameters": {
+						"offset-y": "Self.ImageOffsetY + gameSpeed * dt"
+					}
+				}
+			],
+			"sid": 197394626594599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "evaluate-expression",
+					"objectClass": "System",
+					"sid": 306374102862651,
+					"parameters": {
+						"value": "int(RainbowGround.ImageOffsetY % 64) < 8"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 366521865894321
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "createTrees",
+					"sid": 551469525806628,
+					"parameters": [
+						"-2560"
+					]
+				}
+			],
+			"sid": 345365263957654
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Hide tutorial when the screen is tapped/clicked."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap",
+							"objectClass": "Touch",
+							"sid": 762198233069827
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Hide tutorial."
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Fader",
+							"sid": 273044893387185,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"FaderOpacity\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.5",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextTutorial",
+							"sid": 320886818282773,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"TutorialOpacity\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.5",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Show score and lives."
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextSalud",
+							"sid": 322905025895509,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"LivesOpacity\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.5",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextBolsita",
+							"sid": 415410968032391,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"ScoreOpacity\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.5",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Enable player movement."
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 748915648720965,
+							"parameters": {
+								"group-name": "\"Player Movement\"",
+								"state": "activated"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Disable tutorial."
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 106125410613083,
+							"parameters": {
+								"group-name": "\"Tutorial\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Start spawning entities."
+						},
+						{
+							"callFunction": "spawnEntities",
+							"sid": 685815550542199
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Timer",
+							"sid": 434598746528527,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "6",
+								"type": "once",
+								"tag": "\"entities\""
+							}
+						}
+					],
+					"sid": 222926940837177
+				}
+			],
+			"sid": 454919531292844
+		}
+	],
+	"sid": 332469430744859
+}
