@@ -94,6 +94,46 @@
 			"sid": 946814138486196
 		},
 		{
+			"eventType": "variable",
+			"name": "rainbowCharge",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Current charge of rainbow bar (0-160)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 550073655569120
+		},
+		{
+			"eventType": "variable",
+			"name": "RAINBOW_CHARGE_RATE",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "Charge added per bolsita pickup",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 550073655570120
+		},
+		{
+			"eventType": "variable",
+			"name": "RAINBOW_DRAIN_RATE",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "Charge drained per second in rainbow mode",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 550073655571120
+		},
+		{
+			"eventType": "variable",
+			"name": "RAINBOW_FLASH_CHARGE",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Extra charge per bolsita during rainbow mode",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 550073655572120
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Setup",
@@ -3318,9 +3358,54 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 990605907475727
+							"conditions": [
+								{
+									"id": "is-boolean-eventvar-set",
+									"objectClass": "System",
+									"sid": 660073655573121,
+									"parameters": {
+										"variable": "RainbowMode"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 660073655574121,
+									"parameters": {
+										"variable": "rainbowCharge",
+										"value": "RAINBOW_CHARGE_RATE"
+									}
+								}
+							],
+							"sid": 660073655575121
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-eventvar-set",
+									"objectClass": "System",
+									"sid": 660073655576121,
+									"parameters": {
+										"variable": "RainbowMode"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 660073655577121,
+									"parameters": {
+										"variable": "rainbowCharge",
+										"value": "RAINBOW_FLASH_CHARGE"
+									}
+								}
+							],
+							"sid": 660073655578121
 						}
 					]
 				}
@@ -3372,30 +3457,101 @@
 					"sid": 390537491487729
 				}
 			],
-			"actions": [],
-			"sid": 148336038422604
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 660073655579122,
+					"parameters": {
+						"variable": "rainbowCharge",
+						"value": "clamp(rainbowCharge, 0, 160)"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "TimerGraph",
+					"sid": 660073655580122,
+					"parameters": {
+						"width": "rainbowCharge"
+					}
+				}
+			],
+			"sid": 148336038422604,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-eventvar-set",
+							"objectClass": "System",
+							"sid": 660073655581122,
+							"parameters": {
+								"variable": "RainbowMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 660073655582122,
+							"parameters": {
+								"variable": "rainbowCharge",
+								"value": "rainbowCharge - RAINBOW_DRAIN_RATE * dt"
+							}
+						}
+					],
+					"sid": 660073655583122
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-height",
-					"objectClass": "Rainbowbar",
-					"sid": 662570091153843,
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 660073655584122,
 					"parameters": {
-						"comparison": 4,
-						"height": "87"
+						"variable": "rainbowCharge",
+						"comparison": 5,
+						"value": "160"
 					}
+				},
+				{
+					"id": "is-boolean-eventvar-set",
+					"objectClass": "System",
+					"sid": 660073655585122,
+					"parameters": {
+						"variable": "RainbowMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 136756494340366,
+					"sid": 660073655586122,
 					"parameters": {
 						"variable": "RainbowMode",
 						"value": "true"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GroundCity",
+					"sid": 660073655587122,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RainbowGround",
+					"sid": 660073655588122,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],
@@ -3405,12 +3561,21 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-height",
-					"objectClass": "Rainbowbar",
-					"sid": 114894124912968,
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 660073655589122,
 					"parameters": {
-						"comparison": 2,
-						"height": "1"
+						"variable": "rainbowCharge",
+						"comparison": 3,
+						"value": "0"
+					}
+				},
+				{
+					"id": "is-boolean-eventvar-set",
+					"objectClass": "System",
+					"sid": 660073655590122,
+					"parameters": {
+						"variable": "RainbowMode"
 					}
 				}
 			],
@@ -3418,10 +3583,26 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 737878665694734,
+					"sid": 660073655591122,
 					"parameters": {
 						"variable": "RainbowMode",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GroundCity",
+					"sid": 660073655592122,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RainbowGround",
+					"sid": 660073655593122,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				}
 			],
