@@ -3818,6 +3818,21 @@
 			],
 			"actions": [
 				{
+					"id": "destroy",
+					"objectClass": "Rock",
+					"sid": 330188751975001
+				},
+				{
+					"id": "destroy",
+					"objectClass": "RockBig",
+					"sid": 330188751975002
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Wood",
+					"sid": 330188751975003
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 136756494340366,
@@ -3956,6 +3971,21 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Koparina",
+					"sid": 330188751975004
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Goomlei",
+					"sid": 330188751975005
+				},
+				{
+					"id": "destroy",
+					"objectClass": "StarParticle3D",
+					"sid": 330188751975006
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
