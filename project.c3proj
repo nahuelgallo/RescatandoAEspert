@@ -184,7 +184,9 @@
 			"HealthUI",
 			"FadeWhite",
 			"HealthUIBG",
-			"PlayerCollisionShadow"
+			"PlayerCollisionShadow",
+			"Minimilei2",
+			"MinimotoUI2"
 		],
 		"subfolders": [
 			{

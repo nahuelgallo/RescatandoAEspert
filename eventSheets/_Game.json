@@ -165,6 +165,17 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-effect-parameter",
+							"objectClass": "System",
+							"sid": 335152350308534,
+							"parameters": {
+								"layer": "\"Game\"",
+								"effect": "\"Fogexponential\"",
+								"parameter-index": "0",
+								"value": "rgb(47, 199, 245)"
+							}
+						},
+						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 235962474818562,
@@ -236,7 +247,7 @@
 								"loop": "looping",
 								"volume": "-10",
 								"stereo-pan": "0",
-								"tag-optional": "\"\""
+								"tag-optional": "\"music\""
 							}
 						}
 					],
@@ -3602,6 +3613,29 @@
 						"animation": "\"BigStar\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"id": "set-volume",
+					"objectClass": "Audio",
+					"sid": 587112846627032,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "-100"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 660073655631122,
+					"parameters": {
+						"audio-file": {
+							"path": "Mario Kart 64 - Rainbow Road"
+						},
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"rainbow\""
+					}
 				}
 			],
 			"sid": 874374829291518
@@ -3717,6 +3751,23 @@
 					"parameters": {
 						"animation": "\"Tree1\"",
 						"from": "beginning"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 660073655632122,
+					"parameters": {
+						"tag": "\"rainbow\""
+					}
+				},
+				{
+					"id": "set-volume",
+					"objectClass": "Audio",
+					"sid": 660073655633122,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "-10"
 					}
 				}
 			],
