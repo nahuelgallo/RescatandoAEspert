@@ -134,6 +134,16 @@
 			"sid": 550073655572120
 		},
 		{
+			"eventType": "variable",
+			"name": "rainbowState",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 660073655613122
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Setup",
@@ -242,7 +252,7 @@
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 221994864380487,
+									"sid": 717018889366996,
 									"parameters": {
 										"count": "128"
 									}
@@ -252,7 +262,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 198830779267618,
+									"sid": 602718504341254,
 									"parameters": {
 										"object-to-create": "TreeBillboard",
 										"layer": "\"Game\"",
@@ -263,7 +273,7 @@
 									}
 								}
 							],
-							"sid": 485115895126095
+							"sid": 378166209182024
 						},
 						{
 							"eventType": "block",
@@ -647,6 +657,35 @@
 						},
 						{
 							"type": "comment",
+							"text": "Show rainbow bar text."
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TextTimer",
+							"sid": 660073655607122,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "TextTimer",
+							"sid": 660073655608122,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"RainbowTextShow\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.8",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"type": "comment",
 							"text": "OPACIDADES - UNFINISHED"
 						},
 						{
@@ -901,6 +940,14 @@
 							"id": "set-image-offset-y",
 							"objectClass": "GroundCity",
 							"sid": 568182052925677,
+							"parameters": {
+								"offset-y": "Self.ImageOffsetY + gameSpeed * dt"
+							}
+						},
+						{
+							"id": "set-image-offset-y",
+							"objectClass": "RainbowGround",
+							"sid": 660073655597122,
 							"parameters": {
 								"offset-y": "Self.ImageOffsetY + gameSpeed * dt"
 							}
@@ -3358,54 +3405,19 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-eventvar-set",
-									"objectClass": "System",
-									"sid": 660073655573121,
-									"parameters": {
-										"variable": "RainbowMode"
-									},
-									"isInverted": true
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 660073655574121,
+									"sid": 660073655596122,
 									"parameters": {
 										"variable": "rainbowCharge",
-										"value": "RAINBOW_CHARGE_RATE"
+										"value": "(1 - RainbowMode) * RAINBOW_CHARGE_RATE + RainbowMode * RAINBOW_FLASH_CHARGE"
 									}
 								}
 							],
-							"sid": 660073655575121
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-eventvar-set",
-									"objectClass": "System",
-									"sid": 660073655576121,
-									"parameters": {
-										"variable": "RainbowMode"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 660073655577121,
-									"parameters": {
-										"variable": "rainbowCharge",
-										"value": "RAINBOW_FLASH_CHARGE"
-									}
-								}
-							],
-							"sid": 660073655578121
+							"sid": 990605907475727
 						}
 					]
 				}
@@ -3461,49 +3473,22 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 660073655579122,
+					"sid": 660073655594122,
 					"parameters": {
 						"variable": "rainbowCharge",
-						"value": "clamp(rainbowCharge, 0, 160)"
+						"value": "clamp(rainbowCharge - RAINBOW_DRAIN_RATE * dt * RainbowMode, 0, 160)"
 					}
 				},
 				{
 					"id": "set-width",
 					"objectClass": "TimerGraph",
-					"sid": 660073655580122,
+					"sid": 660073655595122,
 					"parameters": {
 						"width": "rainbowCharge"
 					}
 				}
 			],
-			"sid": 148336038422604,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-eventvar-set",
-							"objectClass": "System",
-							"sid": 660073655581122,
-							"parameters": {
-								"variable": "RainbowMode"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 660073655582122,
-							"parameters": {
-								"variable": "rainbowCharge",
-								"value": "rainbowCharge - RAINBOW_DRAIN_RATE * dt"
-							}
-						}
-					],
-					"sid": 660073655583122
-				}
-			]
+			"sid": 148336038422604
 		},
 		{
 			"eventType": "block",
@@ -3511,7 +3496,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 660073655584122,
+					"sid": 662570091153843,
 					"parameters": {
 						"variable": "rainbowCharge",
 						"comparison": 5,
@@ -3519,23 +3504,33 @@
 					}
 				},
 				{
-					"id": "is-boolean-eventvar-set",
+					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 660073655585122,
+					"sid": 660073655609122,
 					"parameters": {
-						"variable": "RainbowMode"
-					},
-					"isInverted": true
+						"variable": "rainbowState",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 660073655586122,
+					"sid": 136756494340366,
 					"parameters": {
 						"variable": "RainbowMode",
 						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 660073655614122,
+					"parameters": {
+						"variable": "rainbowState",
+						"value": "1"
 					}
 				},
 				{
@@ -3553,6 +3548,60 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FadeWhite",
+					"sid": 660073655599122,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "FadeWhite",
+					"sid": 660073655600122,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"RainbowFlash\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.25",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "2"
+					}
+				},
+				{
+					"id": "set-layer-effect-parameter",
+					"objectClass": "System",
+					"sid": 658478349466360,
+					"parameters": {
+						"layer": "\"Game\"",
+						"effect": "\"Fogexponential\"",
+						"parameter-index": "0",
+						"value": "rgb(43, 28, 87)"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TexTree1",
+					"sid": 660073655620122,
+					"parameters": {
+						"animation": "\"Stars\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TexTree2",
+					"sid": 660073655621122,
+					"parameters": {
+						"animation": "\"BigStar\"",
+						"from": "beginning"
+					}
 				}
 			],
 			"sid": 874374829291518
@@ -3563,7 +3612,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 660073655589122,
+					"sid": 114894124912968,
 					"parameters": {
 						"variable": "rainbowCharge",
 						"comparison": 3,
@@ -3571,11 +3620,13 @@
 					}
 				},
 				{
-					"id": "is-boolean-eventvar-set",
+					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 660073655590122,
+					"sid": 660073655610122,
 					"parameters": {
-						"variable": "RainbowMode"
+						"variable": "rainbowState",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
@@ -3583,10 +3634,55 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 660073655591122,
+					"sid": 737878665694734,
 					"parameters": {
 						"variable": "RainbowMode",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 660073655615122,
+					"parameters": {
+						"variable": "rainbowState",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-layer-effect-parameter",
+					"objectClass": "System",
+					"sid": 418725901955182,
+					"parameters": {
+						"layer": "\"Game\"",
+						"effect": "\"Fogexponential\"",
+						"parameter-index": "0",
+						"value": "rgb(47, 199, 245)"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FadeWhite",
+					"sid": 660073655611122,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "FadeWhite",
+					"sid": 660073655612122,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"RainbowFlash\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.25",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "2"
 					}
 				},
 				{
@@ -3603,6 +3699,24 @@
 					"sid": 660073655593122,
 					"parameters": {
 						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TexTree1",
+					"sid": 660073655622122,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TexTree2",
+					"sid": 660073655623122,
+					"parameters": {
+						"animation": "\"Tree1\"",
+						"from": "beginning"
 					}
 				}
 			],
