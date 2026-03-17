@@ -6,7 +6,7 @@
 
 ## Overview
 
-During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced by hittable objects (Kooparina and Goomlei) that the player can collide with for a satisfying knockback effect. The objects fly off diagonally when hit, accompanied by star particles and impact sound.
+During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced by hittable objects (Koparina and Goomlei) that the player can collide with for a satisfying knockback effect. The objects fly off diagonally when hit, accompanied by star particles and impact sound.
 
 ## Goals
 
@@ -18,7 +18,7 @@ During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced b
 
 | Object | Plugin | Size | Behaviors | Purpose |
 |--------|--------|------|-----------|---------|
-| Kooparina | Shape3D | ~68x64 | Tween | Large hittable rainbow object |
+| Koparina | Shape3D | ~68x64 | Tween | Large hittable rainbow object |
 | Goomlei | Shape3D | ~46x44 | Tween | Small hittable rainbow object |
 | StarParticle3D | Shape3D | ~16x16 | Tween | Impact star particle (3D billboard) |
 
@@ -31,8 +31,8 @@ During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced b
 
 ### Existing Assets
 
-- `koparina-default-000.png` (1.7 KB) — already in project as Sprite, needs conversion to Shape3D
-- `goomlei-default-000.png` (798 bytes) — already in project as Sprite, needs conversion to Shape3D
+- `koparina-default-000.png` (1.7 KB) — already in project as Sprite, needs to be deleted and recreated as Shape3D (Construct 3 doesn't allow changing an object's plugin type in-place)
+- `goomlei-default-000.png` (798 bytes) — already in project as Sprite, needs to be deleted and recreated as Shape3D
 - ParticleStarTex texture — already exists, used as face texture for StarParticle3D
 
 ## Spawn Logic
@@ -41,18 +41,18 @@ During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced b
 
 1. Destroy all existing Rock, Wood, RockBig instances on screen
 2. Existing rainbow activation logic runs (RainbowMode = true, visual/audio transitions)
-3. From this point, `spawnEntities()` spawns Kooparina/Goomlei instead of obstacles
+3. From this point, `spawnEntities()` spawns Koparina/Goomlei instead of obstacles
 
 ### During Rainbow Mode
 
-- **Standard spawn:** 1 object per wave, randomly chosen between Kooparina and Goomlei
-- **Special spawn (occasional):** Row of 3-4 objects crossing the path horizontally
+- **Standard spawn:** 1 object per wave, randomly chosen between Koparina and Goomlei
+- **Special spawn (occasional, ~20% chance):** Row of 3-4 objects evenly spaced across the road width (0-180px), randomly Koparina or Goomlei each
 - Objects move downward at `gameSpeed * dt` (same as all other entities)
 - Objects destroyed if they pass Y > 384 without being hit
 
 ### When Rainbow Mode Deactivates (rainbowCharge <= 0)
 
-1. Destroy all existing Kooparina and Goomlei instances on screen
+1. Destroy all existing Koparina and Goomlei instances on screen
 2. Existing rainbow deactivation logic runs (RainbowMode = false, visual/audio transitions)
 3. Normal obstacle spawning resumes
 
@@ -60,7 +60,7 @@ During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced b
 
 ### Detection
 
-- `PlayerCollision` on collision with Kooparina → trigger knockback
+- `PlayerCollision` on collision with Koparina → trigger knockback
 - `PlayerCollision` on collision with Goomlei → trigger knockback
 - No damage to player (rainbow mode = invincible to these objects)
 
@@ -90,15 +90,16 @@ During rainbow flash mode, normal obstacles (Rock, Wood, RockBig) are replaced b
 
 ### Impact Sound
 
-- Play a satisfying impact sound effect on each collision (e.g., a "bonk" or knockback sound)
+- Play `CrashA` sound effect on each collision (already exists in project sounds)
 - One sound per hit, not per particle
+- If a more satisfying "bonk" sound is desired later, swap the sound asset without changing logic
 
 ## Integration Points
 
 ### spawnEntities() Function
 
 The existing spawn function needs a conditional branch:
-- If `RainbowMode == true`: spawn Kooparina or Goomlei (random choice)
+- If `RainbowMode == true`: spawn Koparina or Goomlei (random choice)
 - If `RainbowMode == false`: spawn Rock/Wood/RockBig (existing behavior)
 
 The special row spawn (3-4 objects) can use a random chance check (e.g., 20-25% of spawns during rainbow mode).
@@ -109,7 +110,7 @@ Add to the existing activation block:
 - Destroy all Rock, Wood, RockBig instances
 
 Add to the existing deactivation block:
-- Destroy all Kooparina, Goomlei instances
+- Destroy all Koparina, Goomlei instances
 
 ### Object Lifecycle
 
