@@ -2249,6 +2249,16 @@
 							"sid": 777722403119922
 						},
 						{
+							"eventType": "variable",
+							"name": "rainbowSpawnRow",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Whether to spawn a row of rainbow objects (0=single, 1=row)",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 330188751971010
+						},
+						{
 							"eventType": "comment",
 							"text": "Spawn coins before the portal."
 						},
@@ -2332,117 +2342,210 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Set random numbers."
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 288913257760528,
-									"parameters": {
-										"variable": "obstacleType",
-										"value": "choose(0, 1, 2)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 818188362694352,
-									"parameters": {
-										"variable": "otherPortalType",
-										"value": "choose(0, 1)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 296504238136467,
-									"parameters": {
-										"variable": "invertPosition",
-										"value": "choose(0, 1)"
-									}
-								}
-							],
-							"sid": 721245676837982
-						},
-						{
-							"eventType": "comment",
-							"text": "Spawn rock, wolf portal and a random portal."
+							"text": "Spawn rainbow hittable objects when in rainbow mode."
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 952991424952921,
+									"sid": 330188751971009,
 									"parameters": {
-										"variable": "obstacleType",
-										"comparison": 0,
-										"value": "0"
+										"variable": "RainbowMode"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 330188751971100,
+							"children": [
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 453232252179179,
-									"parameters": {
-										"object-to-create": "Rock",
-										"layer": "\"Game\"",
-										"x": "LayoutWidth/2",
-										"y": "-WPNDIST",
-										"create-hierarchy": true,
-										"template-name": "\"\""
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 330188751977001,
+											"parameters": {
+												"variable": "rainbowSpawnRow",
+												"value": "floor(random(5)) = 0"
+											}
+										}
+									],
+									"sid": 330188751977006
 								},
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 408813722010139,
-									"disabled": true,
-									"parameters": {
-										"object-to-create": "PortalWolf",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 0) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
+									"eventType": "comment",
+									"text": "Single spawn: one random Koparina or Goomlei."
 								},
 								{
-									"id": "create-object-by-name",
-									"objectClass": "System",
-									"sid": 636837781931949,
-									"disabled": true,
-									"parameters": {
-										"object-name": "otherPortalType = 0 ? \"PortalLizard\" : \"PortalBird\"",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 1) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 330188751971011,
+											"parameters": {
+												"variable": "rainbowSpawnRow",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 330188751971003,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 330188751971012,
+													"parameters": {
+														"value": "floor(random(2)) = 0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 330188751977002,
+													"parameters": {
+														"object-to-create": "Koparina",
+														"layer": "\"Game\"",
+														"x": "choose(26, 58, 90, 122, 154)",
+														"y": "-WPNDIST",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 330188751971001
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 330188751971013
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 330188751977003,
+													"parameters": {
+														"object-to-create": "Goomlei",
+														"layer": "\"Game\"",
+														"x": "choose(26, 58, 90, 122, 154)",
+														"y": "-WPNDIST",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 330188751971002
+										}
+									]
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 699737512912451,
-									"parameters": {
-										"variable": "nextMode",
-										"value": "\"wolf\""
-									}
+									"eventType": "comment",
+									"text": "Row spawn: 3-4 objects spread across the road (~20% chance)."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 330188751971014
+										}
+									],
+									"actions": [],
+									"sid": 330188751971004,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 330188751971015,
+													"parameters": {
+														"name": "\"row\"",
+														"start-index": "0",
+														"end-index": "choose(3, 4) - 1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 330188751971008,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 330188751971016,
+															"parameters": {
+																"value": "floor(random(2)) = 0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 330188751977004,
+															"parameters": {
+																"object-to-create": "Koparina",
+																"layer": "\"Game\"",
+																"x": "26 + loopindex(\"row\") * 45",
+																"y": "-WPNDIST",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 330188751971006
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 330188751971017
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 330188751977005,
+															"parameters": {
+																"object-to-create": "Goomlei",
+																"layer": "\"Game\"",
+																"x": "26 + loopindex(\"row\") * 45",
+																"y": "-WPNDIST",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 330188751971007
+												}
+											]
+										}
+									]
 								}
-							],
-							"sid": 343800855863359
-						},
-						{
-							"eventType": "comment",
-							"text": "Spawn wood, lizard portal and a random portal."
+							]
 						},
 						{
 							"eventType": "block",
@@ -2450,141 +2553,269 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 414206655423857
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 891845623204271,
-									"parameters": {
-										"variable": "obstacleType",
-										"comparison": 0,
-										"value": "1"
-									}
+									"sid": 330188751977010
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 330188751977011,
+							"children": [
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 575813342266672,
-									"parameters": {
-										"object-to-create": "Wood",
-										"layer": "\"Game\"",
-										"x": "LayoutWidth/2",
-										"y": "-WPNDIST",
-										"create-hierarchy": true,
-										"template-name": "\"\""
-									}
+									"eventType": "comment",
+									"text": "Set random numbers."
 								},
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 895921451186153,
-									"disabled": true,
-									"parameters": {
-										"object-to-create": "PortalLizard",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 0) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 288913257760528,
+											"parameters": {
+												"variable": "obstacleType",
+												"value": "choose(0, 1, 2)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 818188362694352,
+											"parameters": {
+												"variable": "otherPortalType",
+												"value": "choose(0, 1)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 296504238136467,
+											"parameters": {
+												"variable": "invertPosition",
+												"value": "choose(0, 1)"
+											}
+										}
+									],
+									"sid": 721245676837982
 								},
 								{
-									"id": "create-object-by-name",
-									"objectClass": "System",
-									"sid": 688671459276592,
-									"disabled": true,
-									"parameters": {
-										"object-name": "otherPortalType = 0 ? \"PortalWolf\" : \"PortalBird\"",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 1) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
+									"eventType": "comment",
+									"text": "Spawn rock, wolf portal and a random portal."
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 123338202821902,
-									"disabled": true,
-									"parameters": {
-										"variable": "nextMode",
-										"value": "\"lizard\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 952991424952921,
+											"parameters": {
+												"variable": "obstacleType",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 453232252179179,
+											"parameters": {
+												"object-to-create": "Rock",
+												"layer": "\"Game\"",
+												"x": "LayoutWidth/2",
+												"y": "-WPNDIST",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 408813722010139,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "PortalWolf",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 0) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 636837781931949,
+											"disabled": true,
+											"parameters": {
+												"object-name": "otherPortalType = 0 ? \"PortalLizard\" : \"PortalBird\"",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 1) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 699737512912451,
+											"parameters": {
+												"variable": "nextMode",
+												"value": "\"wolf\""
+											}
+										}
+									],
+									"sid": 343800855863359
+								},
+								{
+									"eventType": "comment",
+									"text": "Spawn wood, lizard portal and a random portal."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 414206655423857
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 891845623204271,
+											"parameters": {
+												"variable": "obstacleType",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 575813342266672,
+											"parameters": {
+												"object-to-create": "Wood",
+												"layer": "\"Game\"",
+												"x": "LayoutWidth/2",
+												"y": "-WPNDIST",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 895921451186153,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "PortalLizard",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 0) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 688671459276592,
+											"disabled": true,
+											"parameters": {
+												"object-name": "otherPortalType = 0 ? \"PortalWolf\" : \"PortalBird\"",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 1) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 123338202821902,
+											"disabled": true,
+											"parameters": {
+												"variable": "nextMode",
+												"value": "\"lizard\""
+											}
+										}
+									],
+									"sid": 972012993807875
+								},
+								{
+									"eventType": "comment",
+									"text": "Spawn big rock, bird portal and a random portal."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 306598604122624
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 512539136690801,
+											"parameters": {
+												"object-to-create": "RockBig",
+												"layer": "\"Game\"",
+												"x": "choose(LayoutWidth/6, LayoutWidth/1)",
+												"y": "-WPNDIST",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 867089437172132,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "PortalBird",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 0) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 349311473797255,
+											"disabled": true,
+											"parameters": {
+												"object-name": "otherPortalType = 0 ? \"PortalLizard\" : \"PortalWolf\"",
+												"layer": "\"Game\"",
+												"x": "(invertPosition = 1) ? 10 : 170",
+												"y": "-WPNDIST + 640",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 921105115823927,
+											"disabled": true,
+											"parameters": {
+												"variable": "nextMode",
+												"value": "\"bird\""
+											}
+										}
+									],
+									"sid": 166522303957217
 								}
-							],
-							"sid": 972012993807875
-						},
-						{
-							"eventType": "comment",
-							"text": "Spawn big rock, bird portal and a random portal."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 306598604122624
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 512539136690801,
-									"parameters": {
-										"object-to-create": "RockBig",
-										"layer": "\"Game\"",
-										"x": "choose(LayoutWidth/6, LayoutWidth/1)",
-										"y": "-WPNDIST",
-										"create-hierarchy": true,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 867089437172132,
-									"disabled": true,
-									"parameters": {
-										"object-to-create": "PortalBird",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 0) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "create-object-by-name",
-									"objectClass": "System",
-									"sid": 349311473797255,
-									"disabled": true,
-									"parameters": {
-										"object-name": "otherPortalType = 0 ? \"PortalLizard\" : \"PortalWolf\"",
-										"layer": "\"Game\"",
-										"x": "(invertPosition = 1) ? 10 : 170",
-										"y": "-WPNDIST + 640",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 921105115823927,
-									"disabled": true,
-									"parameters": {
-										"variable": "nextMode",
-										"value": "\"bird\""
-									}
-								}
-							],
-							"sid": 166522303957217
+							]
 						}
 					]
 				},
