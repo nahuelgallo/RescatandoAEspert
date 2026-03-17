@@ -4093,6 +4093,176 @@
 				}
 			],
 			"sid": 985915978403614
+		},
+		{
+			"eventType": "comment",
+			"text": "Rainbow mode: Koparina knockback on player collision."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerCollision",
+					"sid": 330188751976100,
+					"parameters": {
+						"object": "Koparina"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 330188751976001,
+					"parameters": {
+						"audio-file": {
+							"path": "CrashA"
+						},
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Koparina",
+					"behaviorType": "Tween",
+					"sid": 330188751976002,
+					"parameters": {
+						"tags": "\"KnockbackX\"",
+						"property": "x",
+						"end-value": "Self.X + choose(-1, 1) * 300",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Koparina",
+					"behaviorType": "Tween",
+					"sid": 330188751976003,
+					"parameters": {
+						"tags": "\"KnockbackY\"",
+						"property": "y",
+						"end-value": "Self.Y - 400",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "after-last-instance",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Koparina",
+					"behaviorType": "Tween",
+					"sid": 330188751976007,
+					"parameters": {
+						"tags": "\"KnockbackRot\"",
+						"property": "angle",
+						"end-value": "Self.Angle + 720",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 330188751972001
+		},
+		{
+			"eventType": "comment",
+			"text": "Rainbow mode: Goomlei knockback on player collision."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerCollision",
+					"sid": 330188751976101,
+					"parameters": {
+						"object": "Goomlei"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 330188751976004,
+					"parameters": {
+						"audio-file": {
+							"path": "CrashA"
+						},
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Goomlei",
+					"behaviorType": "Tween",
+					"sid": 330188751976005,
+					"parameters": {
+						"tags": "\"KnockbackX\"",
+						"property": "x",
+						"end-value": "Self.X + choose(-1, 1) * 300",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Goomlei",
+					"behaviorType": "Tween",
+					"sid": 330188751976006,
+					"parameters": {
+						"tags": "\"KnockbackY\"",
+						"property": "y",
+						"end-value": "Self.Y - 400",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "after-last-instance",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Goomlei",
+					"behaviorType": "Tween",
+					"sid": 330188751976008,
+					"parameters": {
+						"tags": "\"KnockbackRot\"",
+						"property": "angle",
+						"end-value": "Self.Angle + 720",
+						"time": "0.5",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 330188751972002
 		}
 	],
 	"sid": 431144525184015
