@@ -4177,7 +4177,106 @@
 					}
 				}
 			],
-			"sid": 330188751972001
+			"sid": 330188751972001,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 330188751978010,
+							"parameters": {
+								"count": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 330188751978001,
+							"parameters": {
+								"object-to-create": "StarParticle3D",
+								"layer": "\"Game\"",
+								"x": "Koparina.X",
+								"y": "Koparina.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978002,
+							"parameters": {
+								"tags": "\"StarFlyX\"",
+								"property": "x",
+								"end-value": "Self.X + random(-80, 80)",
+								"time": "0.4",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978005,
+							"parameters": {
+								"tags": "\"StarFlyY\"",
+								"property": "y",
+								"end-value": "Self.Y + random(-120, -20)",
+								"time": "0.4",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "after-last-instance",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978003,
+							"parameters": {
+								"tags": "\"StarShrink\"",
+								"property": "width",
+								"end-value": "0",
+								"time": "0.4",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978004,
+							"parameters": {
+								"tags": "\"StarShrinkH\"",
+								"property": "height",
+								"end-value": "0",
+								"time": "0.4",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 330188751973001
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -4262,7 +4361,106 @@
 					}
 				}
 			],
-			"sid": 330188751972002
+			"sid": 330188751972002,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 330188751978011,
+							"parameters": {
+								"count": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 330188751978006,
+							"parameters": {
+								"object-to-create": "StarParticle3D",
+								"layer": "\"Game\"",
+								"x": "Goomlei.X",
+								"y": "Goomlei.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978007,
+							"parameters": {
+								"tags": "\"StarFlyX\"",
+								"property": "x",
+								"end-value": "Self.X + random(-80, 80)",
+								"time": "0.4",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978008,
+							"parameters": {
+								"tags": "\"StarFlyY\"",
+								"property": "y",
+								"end-value": "Self.Y + random(-120, -20)",
+								"time": "0.4",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "after-last-instance",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978009,
+							"parameters": {
+								"tags": "\"StarShrink\"",
+								"property": "width",
+								"end-value": "0",
+								"time": "0.4",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "StarParticle3D",
+							"behaviorType": "Tween",
+							"sid": 330188751978012,
+							"parameters": {
+								"tags": "\"StarShrinkH\"",
+								"property": "height",
+								"end-value": "0",
+								"time": "0.4",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 330188751973002
+				}
+			]
 		}
 	],
 	"sid": 431144525184015
