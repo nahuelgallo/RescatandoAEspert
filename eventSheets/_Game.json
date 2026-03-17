@@ -992,6 +992,22 @@
 							}
 						},
 						{
+							"id": "set-y",
+							"objectClass": "Koparina",
+							"sid": 330188751974001,
+							"parameters": {
+								"y": "Self.Y + gameSpeed * dt"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Goomlei",
+							"sid": 330188751974002,
+							"parameters": {
+								"y": "Self.Y + gameSpeed * dt"
+							}
+						},
+						{
 							"type": "comment",
 							"text": "Move portals."
 						},
@@ -1221,6 +1237,50 @@
 								}
 							],
 							"sid": 592386348821334
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "Koparina",
+									"sid": 330188751974006,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "384"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Koparina",
+									"sid": 330188751974003
+								}
+							],
+							"sid": 330188751970001
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "Goomlei",
+									"sid": 330188751974005,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "384"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Goomlei",
+									"sid": 330188751974004
+								}
+							],
+							"sid": 330188751970002
 						},
 						{
 							"eventType": "block",
