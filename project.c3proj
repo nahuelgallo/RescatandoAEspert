@@ -185,8 +185,9 @@
 			"FadeWhite",
 			"HealthUIBG",
 			"PlayerCollisionShadow",
-			"Minimilei2",
-			"MinimotoUI2"
+			"Koparina",
+			"Goomlei",
+			"StarParticle3D"
 		],
 		"subfolders": [
 			{
