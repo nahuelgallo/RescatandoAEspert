@@ -1883,10 +1883,10 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 154856345082811,
+							"sid": 249939378503116,
 							"parameters": {
 								"audio-file": {
-									"path": "hd-classic-oof-minecraft-damage-sound-effect-128-ytshorts.savetube.me"
+									"path": "espert-gritando-en-la-calle-128-ytshorts.savetube.me_[cut_1sec]"
 								},
 								"loop": "not-looping",
 								"volume": "-9",
@@ -2366,10 +2366,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 330188751977001,
+											"sid": 330212472095197,
 											"parameters": {
 												"variable": "rainbowSpawnRow",
-												"value": "floor(random(5)) = 0"
+												"value": "floor(random(10)) = 0"
 											}
 										}
 									],
@@ -2455,7 +2455,7 @@
 								},
 								{
 									"eventType": "comment",
-									"text": "Row spawn: 3-4 objects spread across the road (~20% chance)."
+									"text": "Row spawn: 3-4 objects in a vertical column (~20% chance)."
 								},
 								{
 									"eventType": "block",
@@ -2475,11 +2475,11 @@
 												{
 													"id": "for",
 													"objectClass": "System",
-													"sid": 330188751971015,
+													"sid": 185314476957154,
 													"parameters": {
 														"name": "\"row\"",
 														"start-index": "0",
-														"end-index": "choose(3, 4) - 1"
+														"end-index": "choose(4, 5, 6, 7, 8) - 1"
 													}
 												}
 											],
@@ -2506,8 +2506,8 @@
 															"parameters": {
 																"object-to-create": "Koparina",
 																"layer": "\"Game\"",
-																"x": "26 + loopindex(\"row\") * 45",
-																"y": "-WPNDIST",
+																"x": "choose(26, 58, 90, 122, 154)",
+																"y": "-WPNDIST - loopindex(\"row\") * 70",
 																"create-hierarchy": false,
 																"template-name": "\"\""
 															}
@@ -2532,8 +2532,8 @@
 															"parameters": {
 																"object-to-create": "Goomlei",
 																"layer": "\"Game\"",
-																"x": "26 + loopindex(\"row\") * 45",
-																"y": "-WPNDIST",
+																"x": "choose(26, 58, 90, 122, 154)",
+																"y": "-WPNDIST - loopindex(\"row\") * 70",
 																"create-hierarchy": false,
 																"template-name": "\"\""
 															}
@@ -3712,14 +3712,111 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 660073655596122,
+									"sid": 804723908950635,
 									"parameters": {
 										"variable": "rainbowCharge",
 										"value": "(1 - RainbowMode) * RAINBOW_CHARGE_RATE + RainbowMode * RAINBOW_FLASH_CHARGE"
 									}
 								}
 							],
-							"sid": 990605907475727
+							"sid": 256671511639706
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 155563017753834,
+									"parameters": {
+										"count": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 436849415569690,
+									"parameters": {
+										"object-to-create": "StarParticle3D",
+										"layer": "\"Game\"",
+										"x": "PlayerBillboard.X",
+										"y": "PlayerBillboard.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "StarParticle3D",
+									"sid": 156909591757011,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"StarFlyX\"",
+										"property": "offsetX",
+										"end-value": "Self.X + random(-80, 80)",
+										"time": "0.4",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "StarParticle3D",
+									"sid": 943468902696716,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"StarFlyY\"",
+										"property": "offsetY",
+										"end-value": "Self.Y + random(-120, -20)",
+										"time": "0.4",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "StarParticle3D",
+									"sid": 836292764213293,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"StarShrink\"",
+										"property": "offsetWidth",
+										"end-value": "0",
+										"time": "0.4",
+										"ease": "easeinsine",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "StarParticle3D",
+									"sid": 438717985390923,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"StarShrinkH\"",
+										"property": "offsetHeight",
+										"end-value": "0",
+										"time": "0.4",
+										"ease": "easeinsine",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 325835761218156
 						}
 					]
 				}
@@ -4114,10 +4211,10 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 330188751976001,
+					"sid": 952516577600951,
 					"parameters": {
 						"audio-file": {
-							"path": "CrashA"
+							"path": "CrashB"
 						},
 						"loop": "not-looping",
 						"volume": "-5",
@@ -4126,15 +4223,60 @@
 					}
 				},
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 909700549453346,
+					"parameters": {
+						"audio-file": {
+							"path": "CrashA"
+						},
+						"loop": "not-looping",
+						"volume": "10",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 542416597337468,
+					"parameters": {
+						"audio-file": {
+							"path": "YoMeVoyKarina"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
 					"id": "tween-one-property",
 					"objectClass": "Koparina",
+					"sid": 717278720378425,
 					"behaviorType": "Tween",
-					"sid": 330188751976002,
+					"parameters": {
+						"tags": "\"KnockbackZ\"",
+						"property": "offsetZElevation",
+						"end-value": "Self.Z + 1 * 250",
+						"time": "0.3",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Koparina",
+					"sid": 544196263463911,
+					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"KnockbackX\"",
-						"property": "x",
-						"end-value": "Self.X + choose(-1, 1) * 300",
-						"time": "0.5",
+						"property": "offsetX",
+						"end-value": "Self.X + choose(1, 0, -1) * 100",
+						"time": "1",
 						"ease": "easeoutsine",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -4145,35 +4287,27 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Koparina",
+					"sid": 850349889518957,
 					"behaviorType": "Tween",
-					"sid": 330188751976003,
-					"parameters": {
-						"tags": "\"KnockbackY\"",
-						"property": "y",
-						"end-value": "Self.Y - 400",
-						"time": "0.5",
-						"ease": "easeoutsine",
-						"destroy-on-complete": "after-last-instance",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Koparina",
-					"behaviorType": "Tween",
-					"sid": 330188751976007,
 					"parameters": {
 						"tags": "\"KnockbackRot\"",
-						"property": "angle",
+						"property": "offsetAngle",
 						"end-value": "Self.Angle + 720",
-						"time": "0.5",
+						"time": "1",
 						"ease": "easeoutsine",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no",
+						"ping-pong": "yes",
 						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-face-visible",
+					"objectClass": "Koparina",
+					"sid": 416090119765178,
+					"parameters": {
+						"face": "front",
+						"visible": false
 					}
 				}
 			],
@@ -4208,11 +4342,11 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
-							"behaviorType": "Tween",
 							"sid": 330188751978002,
+							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"StarFlyX\"",
-								"property": "x",
+								"property": "offsetX",
 								"end-value": "Self.X + random(-80, 80)",
 								"time": "0.4",
 								"ease": "easeoutsine",
@@ -4225,15 +4359,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 845043889575676,
 							"behaviorType": "Tween",
-							"sid": 330188751978005,
 							"parameters": {
 								"tags": "\"StarFlyY\"",
-								"property": "y",
+								"property": "offsetY",
 								"end-value": "Self.Y + random(-120, -20)",
 								"time": "0.4",
 								"ease": "easeoutsine",
-								"destroy-on-complete": "after-last-instance",
+								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
@@ -4242,15 +4376,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 387740734692600,
 							"behaviorType": "Tween",
-							"sid": 330188751978003,
 							"parameters": {
 								"tags": "\"StarShrink\"",
-								"property": "width",
+								"property": "offsetWidth",
 								"end-value": "0",
 								"time": "0.4",
 								"ease": "easeinsine",
-								"destroy-on-complete": "no",
+								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
@@ -4259,15 +4393,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 607020355548062,
 							"behaviorType": "Tween",
-							"sid": 330188751978004,
 							"parameters": {
 								"tags": "\"StarShrinkH\"",
-								"property": "height",
+								"property": "offsetHeight",
 								"end-value": "0",
 								"time": "0.4",
 								"ease": "easeinsine",
-								"destroy-on-complete": "no",
+								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
@@ -4298,13 +4432,41 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 330188751976004,
+					"sid": 116973776652686,
+					"parameters": {
+						"audio-file": {
+							"path": "CrashB"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 203904398801095,
 					"parameters": {
 						"audio-file": {
 							"path": "CrashA"
 						},
 						"loop": "not-looping",
-						"volume": "-5",
+						"volume": "10",
+						"stereo-pan": "0",
+						"tag-optional": "\"knockback\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 476981384872138,
+					"parameters": {
+						"audio-file": {
+							"path": "AmoMileiShort"
+						},
+						"loop": "not-looping",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"knockback\""
 					}
@@ -4312,12 +4474,29 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Goomlei",
+					"sid": 885496848620664,
 					"behaviorType": "Tween",
-					"sid": 330188751976005,
+					"parameters": {
+						"tags": "\"KnockbackZ\"",
+						"property": "offsetZElevation",
+						"end-value": "Self.Z + 1 * 250",
+						"time": "0.3",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Goomlei",
+					"sid": 693911983313299,
+					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"KnockbackX\"",
-						"property": "x",
-						"end-value": "Self.X + choose(-1, 1) * 300",
+						"property": "offsetX",
+						"end-value": "Self.X + choose(1, 0, -1) * 100",
 						"time": "0.5",
 						"ease": "easeoutsine",
 						"destroy-on-complete": "no",
@@ -4329,28 +4508,12 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Goomlei",
-					"behaviorType": "Tween",
-					"sid": 330188751976006,
-					"parameters": {
-						"tags": "\"KnockbackY\"",
-						"property": "y",
-						"end-value": "Self.Y - 400",
-						"time": "0.5",
-						"ease": "easeoutsine",
-						"destroy-on-complete": "after-last-instance",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Goomlei",
-					"behaviorType": "Tween",
 					"sid": 330188751976008,
+					"disabled": true,
+					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"KnockbackRot\"",
-						"property": "angle",
+						"property": "offsetX",
 						"end-value": "Self.Angle + 720",
 						"time": "0.5",
 						"ease": "easeoutsine",
@@ -4392,11 +4555,11 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
-							"behaviorType": "Tween",
 							"sid": 330188751978007,
+							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"StarFlyX\"",
-								"property": "x",
+								"property": "offsetX",
 								"end-value": "Self.X + random(-80, 80)",
 								"time": "0.4",
 								"ease": "easeoutsine",
@@ -4409,15 +4572,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 574215052722811,
 							"behaviorType": "Tween",
-							"sid": 330188751978008,
 							"parameters": {
 								"tags": "\"StarFlyY\"",
-								"property": "y",
+								"property": "offsetY",
 								"end-value": "Self.Y + random(-120, -20)",
 								"time": "0.4",
 								"ease": "easeoutsine",
-								"destroy-on-complete": "after-last-instance",
+								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
@@ -4426,15 +4589,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 849558589934126,
 							"behaviorType": "Tween",
-							"sid": 330188751978009,
 							"parameters": {
 								"tags": "\"StarShrink\"",
-								"property": "width",
+								"property": "offsetWidth",
 								"end-value": "0",
 								"time": "0.4",
 								"ease": "easeinsine",
-								"destroy-on-complete": "no",
+								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
@@ -4443,15 +4606,15 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "StarParticle3D",
+							"sid": 944255554255907,
 							"behaviorType": "Tween",
-							"sid": 330188751978012,
 							"parameters": {
 								"tags": "\"StarShrinkH\"",
-								"property": "height",
+								"property": "offsetHeight",
 								"end-value": "0",
 								"time": "0.4",
 								"ease": "easeinsine",
-								"destroy-on-complete": "no",
+								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"

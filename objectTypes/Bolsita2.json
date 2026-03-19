@@ -1,32 +1,48 @@
 {
-	"name": "Minimilei2",
+	"name": "Bolsita2",
 	"plugin-id": "Sprite",
-	"sid": 142624483254973,
+	"sid": 139813712093360,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 448206706716219
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 770732276293621
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 585362328308068
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 25,
-						"height": 23,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 7212641,
+						"imageSpriteId": 302898,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 855122877525740,
+				"sid": 454096652534420,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

@@ -187,7 +187,8 @@
 			"PlayerCollisionShadow",
 			"Koparina",
 			"Goomlei",
-			"StarParticle3D"
+			"StarParticle3D",
+			"Bolsita2"
 		],
 		"subfolders": [
 			{
@@ -360,6 +361,46 @@
 					"name": "you-suck-at-this-game-128-ytshorts.savetube.me.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 261354481593895,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "amo_nmtZhmY.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 812138211122021,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "BuenoYoMeVoyKarina.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 369374743018114,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "AmoMileiShort.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 900107957335708,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "YoMeVoyKarina.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 571544857821696,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "espert-gritando-en-la-calle-128-ytshorts.savetube.me_[cut_1sec].webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 389172479134782,
 					"file-info": {
 						"purpose": "none"
 					}

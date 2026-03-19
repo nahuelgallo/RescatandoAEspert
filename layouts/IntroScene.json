@@ -308,7 +308,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 117,
+					"uid": 157,
 					"sid": 135882348857005,
 					"tags": "",
 					"instanceVariables": {},
@@ -335,7 +335,7 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 117,
+						"uid": 157,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1954,7 +1954,7 @@
 						"destroy-mode": "fade-to-invisible",
 						"timeout": 0.4
 					},
-					"uid": 115,
+					"uid": 155,
 					"sid": 511619136311559,
 					"tags": "",
 					"instanceVariables": {},

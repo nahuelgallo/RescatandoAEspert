@@ -621,7 +621,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 134,
+					"uid": 153,
 					"sid": 942327520284791,
 					"tags": "",
 					"instanceVariables": {},
@@ -662,7 +662,7 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 134,
+						"uid": 153,
 						"flags": {
 							"x": true,
 							"y": true,
