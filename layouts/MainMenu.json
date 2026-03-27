@@ -1274,7 +1274,84 @@
 		}
 	],
 	"scene-graphs-folder-root": {
-		"items": [],
+		"items": [
+			{
+				"sid": 308522585984075,
+				"expanded": true
+			},
+			{
+				"sid": 537246368721693,
+				"expanded": true
+			},
+			{
+				"sid": 273033593018939,
+				"expanded": true
+			},
+			{
+				"sid": 293725799962253,
+				"expanded": true
+			},
+			{
+				"sid": 699402971548316,
+				"expanded": true
+			},
+			{
+				"sid": 192613234840954,
+				"expanded": true
+			},
+			{
+				"sid": 916339340194778,
+				"expanded": true
+			},
+			{
+				"sid": 411748260990896,
+				"expanded": true
+			},
+			{
+				"sid": 418379457361697,
+				"expanded": true
+			},
+			{
+				"sid": 857472423972525,
+				"expanded": true
+			},
+			{
+				"sid": 942327520284791,
+				"expanded": true
+			},
+			{
+				"sid": 839234793144235,
+				"expanded": true
+			},
+			{
+				"sid": 747443463470213,
+				"expanded": true
+			},
+			{
+				"sid": 681632648284709,
+				"expanded": true
+			},
+			{
+				"sid": 721851687503161,
+				"expanded": true
+			},
+			{
+				"sid": 972995742047790,
+				"expanded": true
+			},
+			{
+				"sid": 306894065983775,
+				"expanded": true
+			},
+			{
+				"sid": 615230622293336,
+				"expanded": true
+			},
+			{
+				"sid": 907788594560222,
+				"expanded": true
+			}
+		],
 		"subfolders": []
 	},
 	"sid": 270947579636271,

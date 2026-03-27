@@ -958,6 +958,10 @@
 						],
 						"replicasUIDs": null
 					},
+					"instanceFolderItem": {
+						"sid": 162751763850483,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -992,6 +996,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 478783769588721,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1025,6 +1033,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 945561694100798,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1265,6 +1277,10 @@
 						],
 						"replicasUIDs": null
 					},
+					"instanceFolderItem": {
+						"sid": 336980888355712,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1461,6 +1477,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 663680210396497,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1534,6 +1554,10 @@
 							"transformO": 0,
 							"previewSceneGraph": false
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 301074735061834,
+						"expanded": false
 					},
 					"showing": true,
 					"locked": false,
@@ -1609,6 +1633,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 377483429962553,
+						"expanded": false
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1683,6 +1711,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 126196502524570,
+						"expanded": false
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1756,6 +1788,10 @@
 							"transformO": 0,
 							"previewSceneGraph": false
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 670485134100034,
+						"expanded": false
 					},
 					"showing": true,
 					"locked": false,
@@ -1878,6 +1914,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 683564882912285,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1924,6 +1964,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 537194757573890,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1970,6 +2014,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 123045661979197,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2016,6 +2064,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 559974816798864,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2050,6 +2102,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 767637137532215,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2083,6 +2139,10 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 246106425653705,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2175,6 +2235,10 @@
 							"transformO": 0,
 							"previewSceneGraph": false
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 917047492960967,
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2790,6 +2854,10 @@
 							}
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 607391674837001,
+						"expanded": true
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2841,6 +2909,10 @@
 								"enabled": true
 							}
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 330188751969004,
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2994,6 +3066,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 738849637442907,
+						"expanded": false
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -3067,6 +3143,10 @@
 							"transformO": 0,
 							"previewSceneGraph": false
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 249592210783487,
+						"expanded": false
 					},
 					"showing": true,
 					"locked": false,
@@ -3142,6 +3222,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 341006661435363,
+						"expanded": false
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -3216,6 +3300,10 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 533684312200418,
+						"expanded": false
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -3269,7 +3357,80 @@
 		}
 	],
 	"scene-graphs-folder-root": {
-		"items": [],
+		"items": [
+			{
+				"sid": 364810934474641,
+				"expanded": true
+			},
+			{
+				"sid": 162751763850483,
+				"expanded": true
+			},
+			{
+				"sid": 478783769588721,
+				"expanded": true
+			},
+			{
+				"sid": 945561694100798,
+				"expanded": true
+			},
+			{
+				"sid": 336980888355712,
+				"expanded": true
+			},
+			{
+				"sid": 663680210396497,
+				"expanded": true
+			},
+			{
+				"sid": 683564882912285,
+				"expanded": true
+			},
+			{
+				"sid": 537194757573890,
+				"expanded": true
+			},
+			{
+				"sid": 123045661979197,
+				"expanded": true
+			},
+			{
+				"sid": 559974816798864,
+				"expanded": true
+			},
+			{
+				"sid": 767637137532215,
+				"expanded": true
+			},
+			{
+				"sid": 246106425653705,
+				"expanded": true
+			},
+			{
+				"sid": 917047492960967,
+				"expanded": true
+			},
+			{
+				"sid": 628787459216750,
+				"expanded": true
+			},
+			{
+				"sid": 286114152634750,
+				"expanded": true
+			},
+			{
+				"sid": 455849124039001,
+				"expanded": true
+			},
+			{
+				"sid": 607391674837001,
+				"expanded": true
+			},
+			{
+				"sid": 330188751969004,
+				"expanded": true
+			}
+		],
 		"subfolders": []
 	},
 	"sid": 216278603699809,

@@ -883,7 +883,7 @@
 				{
 					"type": "TextTutorial",
 					"properties": {
-						"text": "[color=#ffff00]Mantene presionada la pantalla y arrastra a los lados[/color] para mover la moto.\n\n\n[color=#ffff00]Toca dos veces la pantalla para saltar[/color] sobre los orcos y otros obstaculos que aparezcan.\n\n\n[color=#ffff00]Recolecta todas las bolsitas[/color], si agarras muchos, el viaje se vuelve mucho mas interesante.",
+						"text": "[color=#ffff00]Arrastra a los lados[/color] para mover la moto.\n\n\n[color=#ffff00]Toca dos veces la pantalla[/color] para saltar.\n\n\n[color=#ffff00]Recolecta todas las bolsitas[/color] y llega hasta las estrellas!",
 						"enable-bbcode": true,
 						"character-width": 11,
 						"character-height": 15,
@@ -931,10 +931,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 50,
+						"x": 50.41454232136567,
 						"y": 28,
-						"width": 120,
-						"height": 240,
+						"width": 107.02549214361215,
+						"height": 216,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -982,7 +982,7 @@
 						"expanded": true
 					},
 					"showing": true,
-					"locked": false,
+					"locked": true,
 					"world": {
 						"x": 2,
 						"y": 16,
@@ -1379,8 +1379,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 28,
-						"y": 79,
+						"x": 26.341830714537366,
+						"y": 82.73088089229088,
 						"width": 31.999999999999996,
 						"height": 24,
 						"originX": 0.5,
@@ -1450,8 +1450,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 27,
-						"y": 144,
+						"x": 27.414542321365616,
+						"y": 131.97827268039606,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -1521,8 +1521,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 24,
-						"y": 216,
+						"x": 26.487253928193894,
+						"y": 179.93481804118812,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -1584,7 +1584,7 @@
 							1,
 							1,
 							1,
-							1
+							0
 						],
 						"z": 0,
 						"angle": 0
@@ -1761,7 +1761,7 @@
 							1,
 							1,
 							1,
-							1
+							0
 						],
 						"z": 0,
 						"angle": 0
@@ -1832,7 +1832,7 @@
 							1,
 							1,
 							1,
-							1
+							0
 						],
 						"z": 0,
 						"angle": 0
